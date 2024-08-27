@@ -65,7 +65,7 @@ func inner_square(gtx layout.Context) []layout.FlexChild {
 		squares = append(squares, layout.Flexed(1, func(gtx layout.Context) layout.Dimensions {
 			fmt.Println(gtx.Constraints)
 			const r = 10
-			bounds := image.Rect(0, 0, gtx.Constraints.Max.X, 100)
+			bounds := image.Rect(0, 0, gtx.Constraints.Max.X, gtx.Constraints.Max.Y)
 			rrect := clip.RRect{Rect: bounds, SE: r, SW: r, NW: r, NE: r}
 			var rect_color color.NRGBA
 			paint.FillShape(gtx.Ops, color.NRGBA{R: 0, G: 0, B: 250, A: 150},
